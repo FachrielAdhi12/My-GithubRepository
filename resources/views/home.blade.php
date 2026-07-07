@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Fachriel</title>
-    @vite(['resources/css/style.css'])
+    @vite(['resources/css/home.css'])
 </head>
 <body>
 
@@ -14,7 +14,6 @@
             <div class="nav-menu">
                 <a href="{{ route('home') }}" class="nav-item active">Home</a>
                 <a href="{{ route('about') }}" class="nav-item">About Me</a>
-                <a href="{{ route('admin.index') }}" class="nav-item admin-link">Admin Panel</a>
             </div>
         </div>
     </nav>

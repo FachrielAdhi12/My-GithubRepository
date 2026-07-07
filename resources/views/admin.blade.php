@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel - Sync GitHub</title>
-    @vite(['resources/css/style.css'])
+    @vite(['resources/css/home.css', 'resources/css/admin.css'])
 </head>
 <body>
     <div class="container admin-panel">
@@ -29,7 +29,10 @@
         <h3>Data Saat Ini ({{ $projects->count() }} Project)</h3>
         <ul>
             @foreach($projects as $project)
-                <li>{{ $project->name }} ({{ $project->language }})</li>
+                <li>
+                    <span class = "project-name">{{ $project->name }}</span>
+                    <span class = "project-badge">{{ $project->language }}</span>
+                </li>  
             @endforeach
         </ul>
         <a href="{{ route('home') }}" class="btn">Kembali ke Halaman Utama</a>

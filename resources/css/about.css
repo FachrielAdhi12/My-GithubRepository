@@ -1,0 +1,192 @@
+/* ==========================================
+   About Me Section Layout Modern (Two Columns)
+   ========================================== */
+.about-section {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.about-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    display: flex;
+    gap: 3.5rem;
+    align-items: flex-start; /* Mengajarkan konten sejajar dari atas agar rapi */
+    width: 100%;
+}
+
+/* Pengaturan Foto Profil */
+.about-image-wrapper {
+    flex-shrink: 0;
+}
+
+.about-image {
+    width: 260px;
+    height: 320px; /* Disesuaikan dengan rasio pasfoto */
+    object-fit: cover; /* Memastikan foto tidak gepeng atau ketarik */
+    border-radius: 12px;
+    border: 4px solid var(--bg-primary);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Pengaturan Teks Konten */
+.about-content {
+    flex-grow: 1;
+}
+
+.about-header {
+    margin-bottom: 1.5rem;
+}
+
+.about-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--text-main);
+    margin-bottom: 0.25rem;
+}
+
+.sub-title {
+    font-size: 1.1rem;
+    color: var(--primary);
+    font-weight: 600;
+    display: inline-block;
+}
+
+.about-content p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+/* Detail Lokasi & Fokus Utama */
+.about-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.detail-item {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.detail-item strong {
+    color: var(--text-main);
+    display: block;
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+}
+
+/* ==========================================
+   Layout Keahlian Utama & Grid Clean
+   ========================================== */
+.skills-compact {
+    padding-top: 1.5rem;
+    border-top: 1px dashed var(--border-color);
+}
+
+.skills-compact-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    display: block;
+    margin-bottom: 1.25rem;
+}
+
+/* Reset struktur UL agar tidak menggunakan bullet point bawaan */
+.skills-compact ul, 
+.skills-horizontal-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Membagi rata kiri-kanan */
+    gap: 1.5rem 2.5rem;
+}
+
+.skill-item, 
+.skills-compact ul li {
+    display: flex;
+    flex-direction: column;
+    margin: 0; /* Reset margin bawaan li */
+}
+
+.skill-name,
+.skills-compact ul li strong {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* Menambahkan aksen bullet point modern berwarna biru custom */
+.skill-name::before,
+.skills-compact ul li strong::before {
+    content: "•";
+    color: var(--primary);
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.skill-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    padding-left: 0.9rem; /* Menjorok manis sejajar di bawah teks judul */
+}
+
+/* ==========================================
+   Responsif jika dibuka di HP / Layar Kecil
+   ========================================== */
+@media (max-width: 768px) {
+    .about-card {
+        flex-direction: column;
+        gap: 2.5rem;
+        padding: 2rem 1.5rem;
+        align-items: center;
+    }
+    
+    .about-image {
+        width: 220px;
+        height: 270px;
+    }
+    
+    .about-content p {
+        text-align: center;
+    }
+    
+    .about-details {
+        text-align: center;
+        gap: 1.25rem;
+    }
+
+    .skills-compact ul,
+    .skills-horizontal-grid {
+        grid-template-columns: 1fr; /* Kembali menjadi 1 kolom memanjang ke bawah di HP */
+        gap: 1.25rem;
+    }
+    
+    .skill-name,
+    .skills-compact ul li strong {
+        justify-content: center;
+    }
+    
+    .skill-desc {
+        padding-left: 0;
+        text-align: center;
+    }
+}
